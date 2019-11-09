@@ -1,0 +1,1 @@
+CBR_API_URI = ENV["CBR_API_URI"]
