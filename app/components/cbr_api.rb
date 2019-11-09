@@ -3,7 +3,6 @@ module CBR_API
   require 'net/http'
   
   # returns parsed CBR currency cources relatively to RUB
-
   def self.courses
     raise Error.new("No API url") unless CBR_API_URL
     request(url: CBR_API_URL)
