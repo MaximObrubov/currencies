@@ -1,6 +1,12 @@
 <h1>Index#index</h1>
 <p>Find me in app/views/index/index.html.erb</p>
 <p>
-  <%= @current_usd[:Value] %>
-  <%= fa_icon "rub" %>
+  <% if @current_usd %>
+    <%= @current_usd.rate %>
+    <%= fa_icon "rub" %>
+  <% else %>
+    <span class="alert alert-warning">
+      Application don't have any exchange rate
+    </span>
+  <% end %>
 </p>

@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 2019_11_09_170026) do
 
   create_table "usd_exchange_rates", force: :cascade do |t|
-    t.integer "rate", null: false
+    t.float "rate", null: false
     t.boolean "is_forced"
     t.datetime "expiration_date"
     t.datetime "created_at", null: false

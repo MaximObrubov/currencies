@@ -1,6 +1,6 @@
 class IndexController < ApplicationController
   def index
-    @current_usd = CBR_API::courses[:Valute][:USD]
+    @current_usd = UsdExchangeRate.last
   end
   
   def admin
