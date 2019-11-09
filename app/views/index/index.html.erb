@@ -1,12 +1,12 @@
-<h1>Index#index</h1>
-<p>Find me in app/views/index/index.html.erb</p>
-<p>
-  <% if @current_usd %>
-    <%= @current_usd.rate %>
-    <%= fa_icon "rub" %>
-  <% else %>
-    <span class="alert alert-warning">
-      Application don't have any exchange rate
-    </span>
-  <% end %>
-</p>
+<% if @current_usd %>
+  <div class="flex-container ">
+    <div class="flex-item   current-usd">
+      <%= @current_usd.rate %>
+      <%= fa_icon "rub" %>
+    </div>
+  </div>
+<% else %>
+  <span class="alert alert-warning">
+    Application don't have any exchange rate
+  </span>
+<% end %>

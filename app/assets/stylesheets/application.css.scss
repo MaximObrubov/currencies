@@ -1,5 +1,13 @@
+@import "reset";
 @import "bootstrap";
 @import "font-awesome";
 
-@import "index"
+@import "index";
 
+html, body {
+  height: 100%;
+}
+
+.content {
+  height: 100%;
+}
