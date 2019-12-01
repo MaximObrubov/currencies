@@ -1,2 +1,15 @@
-<h1>Index#admin</h1>
-<p>Find me in app/views/index/admin.html.erb</p>
+<% if @current_usd && @current_usd.errors.any? %>
+  <% @current_usd.errors.messages.each do |msg| %>
+    <div class="alert alert-danger">
+      <%= "#{msg[0]} #{msg[1][0]}" %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="flex-container">
+  <%= form_with url: "/admin", class: "usd-change-rate flex-item", data: {remote: false} do |f| %>
+    <%= f.text_field :rate %>
+    <%= date_field(:usd_exchange_rate, DateTime.now) %>
+    <%= f.submit "Submit" %>
+  <% end %>
+</div>

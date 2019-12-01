@@ -12,6 +12,7 @@
   <body class="controller-<%= controller_path.gsub("/", "_") %> action-<%= action_name %>">
     <%= render('layouts/application/menu') %>
     <div class="container content">
+      <%= render('layouts/application/flash') %>
       <%= yield %>
     </div>
   </body>

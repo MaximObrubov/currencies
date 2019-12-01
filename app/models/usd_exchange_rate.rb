@@ -4,6 +4,17 @@ class UsdExchangeRate < ApplicationRecord
   validates :is_forced, inclusion: { in: [true, false] }, default: false
   validate  :expiration_date_cannot_be_in_the_past
  
+  def self.get_last
+    forced = where(is_forced: true)
+      .where("DATE(expiration_date) >= ?", DateTime.now)
+      .last
+    return forced if forced
+    
+    
+    where(is_forced: false).last
+  end
+ 
+ 
   def expiration_date_cannot_be_in_the_past
     if expiration_date.present? && expiration_date < Date.today
       errors.add(:expiration_date, "can't be in the past")
