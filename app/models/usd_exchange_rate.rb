@@ -25,7 +25,6 @@ class UsdExchangeRate < ApplicationRecord
         errors.add(:expiration_date, "can't be in the past")
       end
     end
-  # errors.add(:expiration_date, "must be a valid datetime")
   end
   
 end
