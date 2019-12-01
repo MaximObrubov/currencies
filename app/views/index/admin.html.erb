@@ -12,8 +12,8 @@
       <div class="form-group col-sm-3">
         <%= f.text_field :rate, class: "form-control", placeholder: "Exchange rate", autocomplete: false %>
       </div>
-      <div class="form-group col-sm-3">
-        <%= datetime_field(:usd_exchange_rate, DateTime.now, class: "form-control") %>
+      <div class="form-group col-sm-4">
+        <%= f.datetime_select :expiration_date, default: DateTime.current %>
       </div>
       <div class="form-group col-sm-3">
         <%= f.submit "Submit", class: "btn btn-primary" %>

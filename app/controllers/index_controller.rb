@@ -6,10 +6,11 @@ class IndexController < ApplicationController\
   
   def admin
     if request.post?
+      expiration_date = DateTime.new *datetime_array(params)
       begin
         @current_usd = UsdExchangeRate.new({
           rate: params[:rate],
-          expiration_date: params[:expiration_date],
+          expiration_date: expiration_date,
           is_forced: true,
         })
         @current_usd.save!
@@ -28,5 +29,12 @@ class IndexController < ApplicationController\
         flash.now.alert = "No records found"
       end
     end
+  end
+  
+  
+  private
+  
+  def datetime_array hash
+    %w(1 2 3 4 5).map { |e| hash["expiration_date(#{e}i)"].to_i }
   end
 end
