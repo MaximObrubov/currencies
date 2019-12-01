@@ -6,10 +6,18 @@
   <% end %>
 <% end %>
 
-<div class="flex-container">
-  <%= form_with url: "/admin", class: "usd-change-rate flex-item", data: {remote: false} do |f| %>
-    <%= f.text_field :rate %>
-    <%= date_field(:usd_exchange_rate, DateTime.now) %>
-    <%= f.submit "Submit" %>
+<div class="container">
+  <%= form_with url: "/admin", class: "usd-change-rate", data: {remote: false} do |f| %>
+    <div class="row justify-content-center">
+      <div class="form-group col-sm-3">
+        <%= f.text_field :rate, class: "form-control", placeholder: "Exchange rate", autocomplete: false %>
+      </div>
+      <div class="form-group col-sm-3">
+        <%= datetime_field(:usd_exchange_rate, DateTime.now, class: "form-control") %>
+      </div>
+      <div class="form-group col-sm-3">
+        <%= f.submit "Submit", class: "btn btn-primary" %>
+      </div>
+    </div>
   <% end %>
 </div>

@@ -3,14 +3,15 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .controller-index.action-index {
-
-  .flex-item {
-    font-weight: bold;
-  }
-  
-  .current-usd {
-    text-align: center;
-    font-size: 72px;
-    color: tomato;
+  .content > .container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    .current-usd {
+      text-align: center;
+      font-size: 72px;
+      color: tomato;
+      font-weight: bold;
+    }
   }
 }
